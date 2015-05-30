@@ -116,8 +116,29 @@
     </script>
 
     <script id="signin-template" type="text-template">
-      <h1>Sign In</h1>
-    </script>
+      <div class="container">
+        <h2 class="header">Sign In</h2>
+       <form class="col s12 clearfix">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="UserName" type="text" class="validate">
+              <label for="UserName">User Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate">
+              <label for="password">password</label>
+            </div>
+          </div>
+         
+          <a href="/#/profile" class="btn waves-effect waves-light right" type="submit" name="action">Submit
+             <i class="mdi-content-send right"></i>
+          </a>
+         
+        </form>
+      </div>
+     </script>
 
     <script id="signup-template" type="text-template">
 
@@ -160,15 +181,109 @@
           <button id="signup-submit" class="btn waves-effect waves-light right" type="submit" name="action">Submit
             <i class="mdi-content-send right"></i>
           </button>
-
-
         </form>
       </div>
     </script>
 
-    <script id="profile-template" type="text-template">
-      <h1>Profile</h1>
-      <p>Hello <%= firstName%> <%= lastName%></p>
+    <script id="profile-template" type="text-template">      
+        <div class="container">
+          <h2>Your Profile</h2>
+          <form class="col s12 clearfix">
+
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate" value='<%= firstName%>'>
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate" value='<%= lastName%>'>
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="text" class="validate" value='<%= email%>'>
+                <label for="email">Email</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="phone" type="text" class="validate" value='<%= phone%>'>
+                <label for="phone">Phone Number</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="place" type="text" class="validate" value='<%= place%>'>
+                <label for="place">Place</label>
+              </div>
+            </div>
+
+          <div class="row">
+              <div class="input-field col s6">
+                <input id="area" type="text" class="validate" value='<%= area%>'>
+                <label for="area">area</label>
+              </div>
+               <div class="input-field col s6">
+                <input id="pinCode" type="text" class="validate" value='<%= pinCode%>'>
+                <label for="pinCode">Pin Code</label>
+              </div>
+          </div>
+
+          <div class="row">
+             <div class="input-field col s12">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+              <label>Materialize Select</label>
+            </div>
+
+               <div class="input-field col s12">
+                <input id="country" type="text" class="validate">
+                <label for="country">Country</label>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="input-field col s12">
+                <input id="state" type="text" class="validate">
+                <label for="state">State</label>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="input-field col s12">
+                <input id="dob" type="text" class="validate">
+                <label for="dob">DOB</label>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="input-field col s12">
+                <input id="bloodGroup" type="text" class="validate">
+                <label for="bloodGroup">Blood Group</label>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="input-field col s12">
+                <input id="ngo" type="text" class="validate">
+                <label for="navigation">NGO</label>
+          </div>
+
+          <% _.forEach(emergencyContacts, function(contact) { %>
+            
+              <%=contact.email%>
+
+          <% }); %>
+
+
+        </div>
+        </form>
+      </div>
     </script>
   </body>
 </html>
