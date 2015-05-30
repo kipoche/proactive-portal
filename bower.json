@@ -1,0 +1,23 @@
+{
+  "name": "proactive-portal",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kipoche/proactive-portal",
+  "authors": [
+    "Julien Dreux <julien.dreux@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "less": "~2.5.1"
+  }
+}
