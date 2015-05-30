@@ -24,22 +24,25 @@ $(function(){
     ngo: true
   };
 
+  var users = new PouchDB('http://jdreux.iriscouch.com:5984/kaipache');
+
+  function guid() {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
+  }
+
   crossroads.bypassed.add(function(name){
-
-
-    // var dom = $('#'+name+'-template');
-    //
-    // if(dom.length > 0){
-    //   $('#content').html(dom.html());
-    // } else {
-      console.warn("Could not match route!", arguments);
-      hasher.setHash('404');
-    // }
+    console.warn("Could not match route!", arguments);
+    hasher.setHash('404');
   });
 
   function addRoute(name, cb){
     crossroads.addRoute(name, function(){
-      console.log('setting ocntent', name, $('#'+name+'-template').html());
       $('#content').html($('#'+name+'-template').html());
       if(cb){
         cb();
@@ -52,9 +55,56 @@ $(function(){
     $('.parallax').parallax();
   });
 
-  addRoute('signin');
-  addRoute('signup');
-  // addRoute('profile');.
+  addRoute('signin', function(){
+
+    $('#signin-submit').click(function(){
+      users.get($('input[id=email]').val()).then(function(user){
+        hasher.setHash('users/'+user._id);
+      });
+      return false;
+    });
+
+  });
+
+  addRoute('signup', function(){
+    $('#signup-submit').click(function(){
+      var profile = {
+        _id: $('input[id=email]').val(),
+        firstName: $('input[id=first_name]').val(),
+        lastName: $('input[id=last_name]').val(),
+        email: $('input[id=email]').val(),
+        phone: $('input[id=phone]').val(),
+        password: $('input[id=password]').val()
+      };
+
+      users.put(profile).then(function(){
+        hasher.setHash('users/'+profile._id);
+      });
+
+      return false;
+    });
+  });
+
+  crossroads.addRoute('users/{id}', function(id){
+    users.get(id).then(function(user){
+
+      user = _.extend({
+        place: '',
+        area: '',
+        pinCode: '',
+        gender: '',
+        country: '',
+        state: '',
+        dob: '',
+        bloodGroup: '',
+        ngo: false,
+        emergencyContacts: []
+        }, user);
+
+      var compiled = _.template($('#profile-template').html());
+      $('#content').html(compiled(user));
+    });
+  });
 
   crossroads.addRoute('profile', function(){
 
@@ -75,7 +125,5 @@ $(function(){
   hasher.changed.add(parseHash); //parse hash changes
   hasher.init(); //start listening for history change
 
-  //update URL fragment generating new history record
-  // hasher.setHash('home');
 
 });
