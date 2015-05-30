@@ -44,6 +44,7 @@
     <script type="text/javascript" src="/bower_components/hasher/dist/js/hasher.min.js"></script>
     <script type="text/javascript" src="/bower_components/crossroads.js/dist/crossroads.min.js"></script>
     <script type="text/javascript" src="/bower_components/lodash/lodash.min.js"></script>
+    <script src="bower_components/pouchdb/dist/pouchdb.min.js"></script>
     <script type="text/javascript" src="/scripts/main.js"></script>
 
     <script id="404-template"type="text-template">
@@ -77,8 +78,6 @@
 
       <div class="container">
         <div class="section">
-
-          <!--   Icon Section   -->
           <div class="row">
             <div class="col s12 m4">
               <div class="icon-block">
@@ -158,9 +157,9 @@
           </div>
 
 
-          <a href="/#/profile" class="btn waves-effect waves-light right" type="submit" name="action">Submit
+          <button id="signup-submit" class="btn waves-effect waves-light right" type="submit" name="action">Submit
             <i class="mdi-content-send right"></i>
-          </a>
+          </button>
 
 
         </form>
