@@ -1,12 +1,21 @@
 $(function(){
 
-  crossroads.bypassed.add(function(){
-    console.warn("Could not match route!", arguments);
-    hasher.setHash('404');
+  crossroads.bypassed.add(function(name){
+
+
+    // var dom = $('#'+name+'-template');
+    //
+    // if(dom.length > 0){
+    //   $('#content').html(dom.html());
+    // } else {
+      console.warn("Could not match route!", arguments);
+      hasher.setHash('404');
+    // }
   });
 
   function addRoute(name, cb){
     crossroads.addRoute(name, function(){
+      console.log('setting ocntent', name, $('#'+name+'-template').html());
       $('#content').html($('#'+name+'-template').html());
       if(cb){
         cb();
@@ -21,6 +30,9 @@ $(function(){
 
   addRoute('signin');
   addRoute('signup');
+  addRoute('profile');
+
+  addRoute('404');
 
 
   //setup hasher
