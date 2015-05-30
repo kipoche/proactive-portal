@@ -32,6 +32,22 @@ $(function(){
   addRoute('signup');
   addRoute('profile');
 
+  crossroads.addRoute('profule', function(){
+
+    var profile = {
+      email: 'jjd0@gmail.com',
+      phone: '9895628066',
+      emergencyContacts: [
+        {
+          name: 'Colin Kfury',
+          email: 'ck@gmail.com',
+
+        }
+      ]
+    }
+
+  });
+
   addRoute('404');
 
 
