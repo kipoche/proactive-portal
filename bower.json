@@ -18,6 +18,11 @@
     "tests"
   ],
   "dependencies": {
-    "less": "~2.5.1"
+    "less": "~2.5.1",
+    "materialize": "~0.96.1",
+    "crossroads.js": "~0.12.0",
+    "js-signals": "~1.0.0",
+    "lodash": "~3.9.3",
+    "hasher": "~1.2.0"
   }
 }
