@@ -1,5 +1,29 @@
 $(function(){
 
+  var profile = {
+    id: '1234',
+    firstName: 'Julien',
+    lastName: 'Dreux',
+    email: 'jjd0@gmail.com',
+    phone: '9895628066',
+    emergencyContacts: [
+      {
+        name: 'Colin Kfury',
+        email: 'ck@gmail.com',
+        phone: '1239129319'
+      }
+    ],
+    place: 'Bangalore',
+    area: 'Kormangala',
+    pinCode: '560040',
+    gender: 'Male',
+    country: 'India',
+    state: 'Karnataka',
+    dob: '1988/12/07',
+    bloodGroup: 'A+',
+    ngo: true
+  };
+
   crossroads.bypassed.add(function(name){
 
 
@@ -30,23 +54,15 @@ $(function(){
 
   addRoute('signin');
   addRoute('signup');
-  addRoute('profile');
+  // addRoute('profile');.
 
-  crossroads.addRoute('profule', function(){
+  crossroads.addRoute('profile', function(){
 
-    var profile = {
-      email: 'jjd0@gmail.com',
-      phone: '9895628066',
-      emergencyContacts: [
-        {
-          name: 'Colin Kfury',
-          email: 'ck@gmail.com',
+    var compiled = _.template($('#profile-template').html());
 
-        }
-      ]
-    }
-
+    $('#content').html(compiled(profile));
   });
+
 
   addRoute('404');
 
