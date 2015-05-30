@@ -38,7 +38,7 @@ $(function(){
 
   crossroads.bypassed.add(function(name){
     console.warn("Could not match route!", arguments);
-    hasher.setHash('404');
+    hasher.setHash('home');
   });
 
   function addRoute(name, cb){
