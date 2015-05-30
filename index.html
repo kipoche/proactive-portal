@@ -233,32 +233,32 @@
 
         <div class = "row">
 
-          <div class="input-field col s6">
+         
           <div>
             
-              <div class="input-field col s2">
+              <div class="input-field col s1">
                 <label>Gender</label>
               </div>  
                <div class="input-field col s4">
                   <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Female</option>
-                    <option value="2">Male</option>
+                    <option <%= gender=='Female'?'selected':''%> value="Female">Female</option>
+                    <option <%= gender=='Male'?'selected':''%> value="Male">Male</option>
                   </select>
               </div>  
               </div>
-          </div>
+        
   
           <div>
             <div class="input-field col s1">
               <label>Country</label>
             </div>  
-             <div class="input-field col s3">
+             <div class="input-field col s4">
                 <select class="browser-default">
                   <option value="" disabled selected>Choose your option</option>
-                  <option value="2">Nepal</option>
-                  <option value="1">India</option>
-                  <option value="2">France</option>
+                  <option <%= country=='Nepal'?'selected':''%> value="2">Nepal</option>
+                  <option <%= country=='India'?'selected':''%> value="1">India</option>
+                  <option <%= country=='France'?'selected':''%> value="2">France</option>
                 </select>
             </div>  
           </div>
@@ -266,36 +266,36 @@
 
   <div class = "row">
 
-          <div class="input-field col s6">
+         
           <div>
             
-              <div class="input-field col s2">
+              <div class="input-field col s1">
                 <label>State</label>
               </div>  
                <div class="input-field col s4">
                   <select class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Karnataka</option>
+                    <option <%= state=='Karnataka'?'selected':''%> value="1">Karnataka</option>
                   </select>
               </div>  
               </div>
-          </div>
+          
   
-          <div class="row">
+          <div>
             <div class="input-field col s1">
               <label>Blood Group</label>
             </div>  
-             <div class="input-field col s3">
+             <div class="input-field col s4">
                 <select class="browser-default">
                   <option value="" disabled selected>Choose your option</option>
-                  <option value="1">A +Ve</option>
-                  <option value="2">B +Ve</option>
-                  <option value="3">AB +Ve</option>
-                  <option value="4">O +Ve</option>
-                  <option value="5">A -Ve</option>
-                  <option value="6">B -Ve</option>
-                  <option value="7">O -Ve</option>
-                  <option value="8">AB -Ve</option>
+                  <option <%= bloodGroup=='A +Ve'?'selected':''%> value="1">A +Ve</option>
+                  <option <%= bloodGroup=='B +Ve'?'selected':''%> value="2">B +Ve</option>
+                  <option <%= bloodGroup=='AB +Ve'?'selected':''%> value="3">AB +Ve</option>
+                  <option <%= bloodGroup=='O +Ve'?'selected':''%> value="4">O +Ve</option>
+                  <option <%= bloodGroup=='A -Ve'?'selected':''%> value="5">A -Ve</option>
+                  <option <%= bloodGroup=='B -Ve'?'selected':''%> value="6">B -Ve</option>
+                  <option <%= bloodGroup=='O -Ve'?'selected':''%> value="7">O -Ve</option>
+                  <option <%= bloodGroup=='AB -Ve'?'selected':''%> value="8">AB -Ve</option>
                 </select>
             </div>  
           </div>

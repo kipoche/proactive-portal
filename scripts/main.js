@@ -20,7 +20,7 @@ $(function(){
     country: 'India',
     state: 'Karnataka',
     dob: '1988/12/07',
-    bloodGroup: 'A+',
+    bloodGroup: 'A +Ve',
     ngo: true
   };
 
