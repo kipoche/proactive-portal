@@ -58,10 +58,10 @@ $(function(){
   addRoute('signin', function(){
 
     $('#signin-submit').click(function(){
-      users.allDocs(function(users){
-        var user = _.find(users, {email: $('input[id=email]')});
+      users.get($('input[id=email]').val()).then(function(user){
         hasher.setHash('users/'+user._id);
-      })
+      });
+      return false;
     });
 
   });
@@ -69,7 +69,7 @@ $(function(){
   addRoute('signup', function(){
     $('#signup-submit').click(function(){
       var profile = {
-        _id: guid(),
+        _id: $('input[id=email]').val(),
         firstName: $('input[id=first_name]').val(),
         lastName: $('input[id=last_name]').val(),
         email: $('input[id=email]').val(),
@@ -87,6 +87,20 @@ $(function(){
 
   crossroads.addRoute('users/{id}', function(id){
     users.get(id).then(function(user){
+
+      user = _.extend({
+        place: '',
+        area: '',
+        pinCode: '',
+        gender: '',
+        country: '',
+        state: '',
+        dob: '',
+        bloodGroup: '',
+        ngo: false,
+        emergencyContacts: []
+        }, user);
+
       var compiled = _.template($('#profile-template').html());
       $('#content').html(compiled(user));
     });

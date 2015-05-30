@@ -31,7 +31,7 @@
     <footer class="page-footer teal">
       <div class="footer-copyright">
         <div class="container">
-        Made by the Kai Po Che team for <a href="http://www.venturesity.com/hack-for-nepal.html"> Hack for Nepal</a> Hackathon on Saturday, May 30th 2015.
+        Made by the Kai Po Che team for the <a href="http://www.venturesity.com/hack-for-nepal.html"> Hack for Nepal</a> Hackathon on Saturday, May 30th 2015.
         </div>
       </div>
     </footer>
@@ -60,7 +60,7 @@
             <h1 class="header center">Proactive Disaster Recovery</h1>
             <div class="row center">
               <h5 class="header col s12 light">
-                The right place to protect you and your family.
+                Get Help Now! Text <b>@kaipoche</b> to <b>51115</b
               </h5>
             </div>
             <div class="row center">
@@ -131,11 +131,11 @@
               <label for="password">password</label>
             </div>
           </div>
-         
-          <a href="/#/profile" class="btn waves-effect waves-light right" type="submit" name="action">Submit
+
+          <button id="signin-submit" class="btn waves-effect waves-light right" type="submit" name="action">Submit
              <i class="mdi-content-send right"></i>
-          </a>
-         
+          </button>
+
         </form>
       </div>
      </script>
@@ -185,7 +185,7 @@
       </div>
     </script>
 
-    <script id="profile-template" type="text-template">      
+    <script id="profile-template" type="text-template">
         <div class="container">
           <h2>Your Profile</h2>
           <form class="col s12 clearfix">
@@ -200,7 +200,7 @@
                 <label for="last_name">Last Name</label>
               </div>
             </div>
-            
+
             <div class="row">
               <div class="input-field col s12">
                 <input id="email" type="text" class="validate" value='<%= email%>'>
@@ -275,7 +275,7 @@
           </div>
 
           <% _.forEach(emergencyContacts, function(contact) { %>
-            
+
               <%=contact.email%>
 
           <% }); %>
