@@ -194,93 +194,148 @@
             <div class="row">
               <div class="input-field col s6">
                 <input id="first_name" type="text" class="validate" value='<%= firstName%>'>
-                <label for="first_name">First Name</label>
+                <label class="active" for="first_name">First Name</label>
               </div>
               <div class="input-field col s6">
                 <input id="last_name" type="text" class="validate" value='<%= lastName%>'>
-                <label for="last_name">Last Name</label>
+                <label class="active" for="last_name">Last Name</label>
               </div>
             </div>
             
             <div class="row">
               <div class="input-field col s12">
                 <input id="email" type="text" class="validate" value='<%= email%>'>
-                <label for="email">Email</label>
+                <label class="active" for="email">Email</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s6">
                 <input id="phone" type="text" class="validate" value='<%= phone%>'>
-                <label for="phone">Phone Number</label>
+                <label class="active" for="phone">Phone Number</label>
               </div>
               <div class="input-field col s6">
                 <input id="place" type="text" class="validate" value='<%= place%>'>
-                <label for="place">Place</label>
+                <label class="active" for="place">Place</label>
               </div>
             </div>
 
           <div class="row">
               <div class="input-field col s6">
                 <input id="area" type="text" class="validate" value='<%= area%>'>
-                <label for="area">area</label>
+                <label class="active" for="area">area</label>
               </div>
                <div class="input-field col s6">
                 <input id="pinCode" type="text" class="validate" value='<%= pinCode%>'>
-                <label for="pinCode">Pin Code</label>
+                <label class="active" for="pinCode">Pin Code</label>
               </div>
           </div>
 
-          <div class="row">
-             <div class="input-field col s12">
-              <select>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-              </select>
-              <label>Materialize Select</label>
-            </div>
+        <div class = "row">
 
-               <div class="input-field col s12">
-                <input id="country" type="text" class="validate">
-                <label for="country">Country</label>
-              </div>
-          </div>
-
-          <div class="row">
-              <div class="input-field col s12">
-                <input id="state" type="text" class="validate">
-                <label for="state">State</label>
-              </div>
-          </div>
-
-          <div class="row">
-              <div class="input-field col s12">
-                <input id="dob" type="text" class="validate">
-                <label for="dob">DOB</label>
-              </div>
-          </div>
-
-          <div class="row">
-              <div class="input-field col s12">
-                <input id="bloodGroup" type="text" class="validate">
-                <label for="bloodGroup">Blood Group</label>
-              </div>
-          </div>
-
-          <div class="row">
-              <div class="input-field col s12">
-                <input id="ngo" type="text" class="validate">
-                <label for="navigation">NGO</label>
-          </div>
-
-          <% _.forEach(emergencyContacts, function(contact) { %>
+          <div class="input-field col s6">
+          <div>
             
-              <%=contact.email%>
+              <div class="input-field col s2">
+                <label>Gender</label>
+              </div>  
+               <div class="input-field col s4">
+                  <select class="browser-default">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Female</option>
+                    <option value="2">Male</option>
+                  </select>
+              </div>  
+              </div>
+          </div>
+  
+          <div>
+            <div class="input-field col s1">
+              <label>Country</label>
+            </div>  
+             <div class="input-field col s3">
+                <select class="browser-default">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="2">Nepal</option>
+                  <option value="1">India</option>
+                  <option value="2">France</option>
+                </select>
+            </div>  
+          </div>
+      </div>
+
+  <div class = "row">
+
+          <div class="input-field col s6">
+          <div>
+            
+              <div class="input-field col s2">
+                <label>State</label>
+              </div>  
+               <div class="input-field col s4">
+                  <select class="browser-default">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Karnataka</option>
+                  </select>
+              </div>  
+              </div>
+          </div>
+  
+          <div class="row">
+            <div class="input-field col s1">
+              <label>Blood Group</label>
+            </div>  
+             <div class="input-field col s3">
+                <select class="browser-default">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">A +Ve</option>
+                  <option value="2">B +Ve</option>
+                  <option value="3">AB +Ve</option>
+                  <option value="4">O +Ve</option>
+                  <option value="5">A -Ve</option>
+                  <option value="6">B -Ve</option>
+                  <option value="7">O -Ve</option>
+                  <option value="8">AB -Ve</option>
+                </select>
+            </div>  
+          </div>
+      </div>
+
+          <div class="row">
+              <div class="input-field col s12">
+                <input id="dob" type="text" class="validate" value='<%= dob%>'>
+                <label class="active" for="dob">DOB</label>
+              </div>
+              
+              <div class="input-field col s12">
+                <input id="ngo" type="text" class="validate" value='<%= ngo%>'>
+                <label class="active" for="navigation">NGO</label>
+              </div>
+          </div>
+
+        <div class="row">
+        <h5>Emergency Contacts</h5>
+        </div>
+        <% _.forEach(emergencyContacts, function(contact) { %>
+            
+          <div class="row">
+              <div class="input-field col s4">
+                <input id="email" type="text" class="validate" value='<%=contact.email%>'>
+                <label class="active" for="email">Email</label>
+              </div>
+              <div class="input-field col s4">
+                <input id="name" type="text" class="validate" value='<%=contact.name%>'>
+                <label class="active" for="name">Name</label>
+              </div>
+              <div class="input-field col s4">
+                <input id="phone" type="text" class="validate" value='<%=contact.phone%>'>
+                <label class="active" for="phone">Phone</label>
+              </div>
+
+               
+          </div>
 
           <% }); %>
-
 
         </div>
         </form>
