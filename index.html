@@ -116,20 +116,66 @@
     </script>
 
     <script id="signin-template" type="text-template">
-      <div class="col s12 m4">
-              <div class="input-field col s12">
-                <label id="userNameLbl">User Name</label>
-                <input id="UserNameTxt" type="text" class="validate">
-              </div>
-               <div class="input-field col s12">
-                <label id="passwordLbl">password</label>
-                <input id="passwordTxt" type="password" class="validate">
-              </div>
+      <div class="container">
+        <h2 class="header">Sign In</h2>
+       <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="UserName" type="text" class="validate">
+              <label for="UserName">User Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate">
+              <label for="password">password</label>
+            </div>
+          </div>
+        </form>
       </div>
      </script>
 
     <script id="signup-template" type="text-template">
-      <h1>Sign Up</h1>
+
+      <div class="container">
+        <h2 class="header">Sign Up</h2>
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="text" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="phone" type="text" class="validate">
+              <label for="phone">Phone Number</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+
+
+
+        </form>
+      </div>
     </script>
   </body>
 </html>

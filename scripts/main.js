@@ -32,6 +32,6 @@ $(function(){
   hasher.init(); //start listening for history change
 
   //update URL fragment generating new history record
-  hasher.setHash('home');
+  // hasher.setHash('home');
 
 });
