@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KiPaChe - Proactive Disaster Management</title>
+    <title>Kai Po Che - Proactive Disaster Management</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link type="text/css" rel="stylesheet" href="/bower_components/materialize/dist/css/materialize.min.css" media="screen,projection"/>
@@ -14,7 +14,7 @@
 
     <nav class="white" role="navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">KiPaChe</a>
+        <a id="logo-container" href="/#/home" class="brand-logo">KaiPoChe</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="#/signin">Sign In</a></li>
         </ul>
@@ -31,7 +31,7 @@
     <footer class="page-footer teal">
       <div class="footer-copyright">
         <div class="container">
-        Made by the Kapache team for <a href="http://www.venturesity.com/hack-for-nepal.html">Hack for Nepal</a>. Saturday, May 30th 2015.
+        Made by the Kai Po Che team for <a href="http://www.venturesity.com/hack-for-nepal.html"> Hack for Nepal</a> Hackathon on Saturday, May 30th 2015.
         </div>
       </div>
     </footer>
@@ -45,7 +45,11 @@
     <script type="text/javascript" src="/bower_components/crossroads.js/dist/crossroads.min.js"></script>
     <script type="text/javascript" src="/scripts/main.js"></script>
 
-    <script id="homepage-template" type="text-template">
+    <script id="404-template"type="text-template">
+      <h1>404</h1>
+    </script>
+
+    <script id="home-template" type="text-template">
 
       <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
@@ -80,7 +84,10 @@
                 <h2 class="center brown-text"><i class="mdi-social-person-outline"></i></h2>
                 <h5 class="center">Create your profile</h5>
 
-                <p class="light">Give us basic and vital information so that we know how to help in case of disaster.</p>
+                <p class="light">
+                  Give us basic, medical and location information so that we know how to help in case of disaster.
+                  <a href="/#/signup">Create your profile now!</a>
+                </p>
               </div>
             </div>
 
@@ -89,7 +96,7 @@
                 <h2 class="center brown-text"><i class="mdi-notification-vibration"></i></h2>
                 <h5 class="center">Stay informed</h5>
 
-                <p class="light">In case disaster we will notify you through SMS of information and risks specific to you and your area.</p>
+                <p class="light">In case of disaster we will notify you through SMS of information and risks specific to you and your area.</p>
               </div>
             </div>
 

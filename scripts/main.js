@@ -1,17 +1,26 @@
 $(function(){
-  crossroads.addRoute('home', function(){
-    $('#content').html($('#homepage-template').html());
+
+  crossroads.bypassed.add(function(){
+    console.warn("Could not match route!", arguments);
+    hasher.setHash('404');
+  });
+
+  function addRoute(name, cb){
+    crossroads.addRoute(name, function(){
+      $('#content').html($('#'+name+'-template').html());
+      if(cb){
+        cb();
+      }
+    });
+  }
+
+  addRoute('home', function(){
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
   });
 
-  crossroads.addRoute('signin', function(){
-    $('#content').html($('#signin-template').html());
-  });
-
-  crossroads.addRoute('signup', function(){
-    $('#content').html($('#signup-template').html());
-  });
+  addRoute('signin');
+  addRoute('signup');
 
 
   //setup hasher
